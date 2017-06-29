@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.vinci</groupId>
+    <artifactId>math-learn</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <compilerMavenPlugin>3.6.1</compilerMavenPlugin>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compilerMavenPlugin}</version>
+                <configuration>
+                    <source>${compilerSource}</source>
+                    <target>${compilerTarget}</target>
+                    <encoding>${compilerEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>jdk-1.8</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <jdk>1.8</jdk>
+            </activation>
+            <properties>
+                <compilerSource>1.8</compilerSource>
+                <compilerTarget>1.8</compilerTarget>
+                <compilerEncoding>UTF-8</compilerEncoding>
+            </properties>
+        </profile>
+    </profiles>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.relops</groupId>
+            <artifactId>snowflake</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jodd</groupId>
+            <artifactId>jodd-core</artifactId>
+            <version>3.8.6</version>
+        </dependency>
+    </dependencies>
+</project>
